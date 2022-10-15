@@ -3,18 +3,19 @@ import ContactItem from 'components/ContactItem/ContactItem';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { selectVisibleContacts } from 'redux/contacts/selectors';
+import { ContactsListWrap } from './ContactsList.styled';
 
 const ContactsList = () => {
   const contacts = useSelector(selectVisibleContacts);
 
   return (
-    <div>
-      <ul>
+    <>
+      <ContactsListWrap>
         {contacts.map(({ name, number, id }) => {
           return <ContactItem key={id} id={id} name={name} number={number} />;
         })}
-      </ul>
-    </div>
+      </ContactsListWrap>
+    </>
   );
 };
 

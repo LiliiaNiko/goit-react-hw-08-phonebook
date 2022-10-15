@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterWrap } from './Filter.styled';
+import { FilterWrap, Label, Input } from './Filter.styled';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeFilter } from 'redux/contacts/filterSlice';
@@ -12,8 +12,8 @@ const Filter = () => {
   const onChangeFilter = evt => dispatch(changeFilter(evt.currentTarget.value));
   return (
     <FilterWrap>
-      <label>Find contacts by name</label>
-      <input
+      <Label>Find contacts by name</Label>
+      <Input
         type="text"
         name="filter"
         value={filter}
